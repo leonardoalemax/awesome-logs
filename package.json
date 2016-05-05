@@ -1,0 +1,11 @@
+{
+  "name": "awesome-logs",
+  "version": "1.0.0",
+  "description": "a simple tool to make awesome console logs",
+  "main": "alogs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo @leualemax Ferreira <leualemax@gmail.com>",
+  "license": "ISC"
+}
