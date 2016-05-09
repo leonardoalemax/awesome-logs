@@ -1,1 +1,2 @@
 extends: google
+installedESLint: true

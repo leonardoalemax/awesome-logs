@@ -33,6 +33,22 @@ var utils = {
       default:
         return "white";
     }
+  },
+  getMoment: function() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var hh = today.getHour();
+    var MM = today.getMinute();
+    var SS = today.getSecond();
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    return dd + '/' + mm + '/' + yyyy + ":" + hh + ":" + MM + ":" + SS;
   }
 };
 
@@ -41,7 +57,23 @@ var aLogs = {
     var nType = utils.normalizeType(type);
     var color = utils.selectColor(nType);
     var prefix = utils.makePrefix(nType);
-    console.log(colors[color](prefix) + " - " + message);
+    console.log(colors[color](prefix) + " [" + utils.getMoment() + "] " +
+                message);
+  },
+  success: function(message) {
+    aLogs.log(message, 'success');
+  },
+  error: function(message) {
+    aLogs.log(message, 'error');
+  },
+  fail: function(message) {
+    aLogs.log(message, 'fail');
+  },
+  alert: function(message) {
+    aLogs.log(message, 'alert');
+  },
+  info: function(message) {
+    aLogs.log(message, 'info');
   }
 };
 
