@@ -1,6 +1,6 @@
 {
   "name": "awesome-logs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a simple tool to make awesome console logs",
   "main": "alogs.js",
   "scripts": {

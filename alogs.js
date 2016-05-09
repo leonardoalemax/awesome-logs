@@ -72,7 +72,7 @@ var aLogs = {
     aLogs.log(message, 'info');
   },
   row: function() {
-    console.log("--------------------------------------");
+    console.log("--------------------------------------------------");
   }
 };
 
