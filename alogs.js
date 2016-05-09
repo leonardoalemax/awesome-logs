@@ -5,6 +5,7 @@
  **/
 /* eslint no-restricted-modules: ["error", "fs", "cluster"]  */
 var colors = require('colors');
+var padStart = require('lodash.padstart');
 
 var utils = {
   normalizeType: function(type) {
@@ -36,12 +37,12 @@ var utils = {
   },
   getMoment: function() {
     var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var hh = today.getHour();
-    var MM = today.getMinute();
-    var SS = today.getSecond();
-    var yyyy = today.getFullYear();
+    var dd = padStart(today.getDate(), 2, "0");
+    var mm = padStart(today.getMonth() + 1, 2, "0");
+    var hh = padStart(today.getHours(), 2, "0");
+    var MM = padStart(today.getMinutes(), 2, "0");
+    var SS = padStart(today.getSeconds(), 2, "0");
+    var yyyy = padStart(today.getFullYear(), 4, "0");
     if (dd < 10) {
       dd = '0' + dd;
     }

@@ -1,6 +1,6 @@
 {
   "name": "awesome-logs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple tool to make awesome console logs",
   "main": "alogs.js",
   "scripts": {
@@ -11,5 +11,8 @@
   "devDependencies": {
     "eslint": "^2.9.0",
     "eslint-config-google": "^0.5.0"
+  },
+  "dependencies": {
+    "lodash.padstart": "^4.4.0"
   }
 }
