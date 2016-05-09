@@ -17,7 +17,7 @@ var utils = {
        nType === "INFO") ? nType : "";
   },
   makePrefix: function(type) {
-    return (type === "") ? "" : "[" + type + "]";
+    return (type === "") ? "" : type;
   },
   selectColor: function(type) {
     switch (type) {
@@ -43,13 +43,7 @@ var utils = {
     var MM = padStart(today.getMinutes(), 2, "0");
     var SS = padStart(today.getSeconds(), 2, "0");
     var yyyy = padStart(today.getFullYear(), 4, "0");
-    if (dd < 10) {
-      dd = '0' + dd;
-    }
-    if (mm < 10) {
-      mm = '0' + mm;
-    }
-    return dd + '/' + mm + '/' + yyyy + ":" + hh + ":" + MM + ":" + SS;
+    return dd + '/' + mm + '/' + yyyy + "-" + hh + ":" + MM + ":" + SS;
   }
 };
 
@@ -58,8 +52,9 @@ var aLogs = {
     var nType = utils.normalizeType(type);
     var color = utils.selectColor(nType);
     var prefix = utils.makePrefix(nType);
-    console.log(colors[color](prefix) + " [" + utils.getMoment() + "] " +
-                message);
+    console.log("[" + colors[color](prefix) + "]" +
+                "[" + colors.cyan(utils.getMoment()) + "] " +
+                      message);
   },
   success: function(message) {
     aLogs.log(message, 'success');
@@ -75,6 +70,9 @@ var aLogs = {
   },
   info: function(message) {
     aLogs.log(message, 'info');
+  },
+  row: function() {
+    console.log("--------------------------------------");
   }
 };
 
